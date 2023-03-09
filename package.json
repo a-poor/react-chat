@@ -1,8 +1,19 @@
 {
   "name": "@a-poor/react-chat",
-  "private": true,
   "version": "0.1.0-alpha1",
   "type": "module",
+  "description": "A chat-box component library for React.",
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "https://github.com/a-poor/react-chat",
+  "bugs": {
+    "url": "https://github.com/a-poor/react-chat/issues"
+  },
+  "author": {
+    "name": "Austin Poor",
+    "email": "code@austinpoor.com",
+    "url": "https://austinpoor.com/"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -11,8 +22,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@mui/material": "^5.11.12",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-window": "^1.8.8"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
