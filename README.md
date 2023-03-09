@@ -2,5 +2,5 @@
 
 _created by Austin Poor_
 
-A chat component library for React.
+A chat-box component library for React.
 
