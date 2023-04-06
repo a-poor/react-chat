@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react';
 
 export interface IMessageProps {
   children: React.ReactNode;
+  align: "left" | "right" | "center";
   w?: string | number;
   maxw?: string | number;
   minw?: string | number;
@@ -20,7 +21,8 @@ export interface IMessageProps {
 
 export function Message({
   children = "", 
-  w = "fit-content", 
+  align = "right",
+  w, 
   minw = 14, 
   maxw, 
   h, 
@@ -37,27 +39,35 @@ export function Message({
   ...props
 }: IMessageProps) {
   return (
-    <div 
+    <div
       style={{
-        fontFamily: "sans-serif",
+        display: "flex",
+        justifyContent: align,
         width: w,
-        minWidth: minw,
-        maxWidth: maxw,
-        height: h,
-        minHeight: minh,
-        backgroundColor: bgColor,
-        margin: m,
-        padding: p,
-        color: textColor,
-        borderRadius: radius,
-        borderBottomRightRadius: bottomRightRadius || radius,
-        borderBottomLeftRadius: bottomLeftRadius || radius,
-        boxShadow: "3px 1px 5px rgba(150,150,150,0.25)",
-        ...style,
       }}
-      {...props}
     >
-      { children }
+      <div
+        style={{
+          fontFamily: "sans-serif",
+          width: "fit-content",
+          minWidth: minw,
+          maxWidth: maxw,
+          height: h,
+          minHeight: minh,
+          backgroundColor: bgColor,
+          margin: m,
+          padding: p,
+          color: textColor,
+          borderRadius: radius,
+          borderBottomRightRadius: bottomRightRadius || radius,
+          borderBottomLeftRadius: bottomLeftRadius || radius,
+          // boxShadow: "3px 1px 5px rgba(150,150,150,0.25)",
+          ...style,
+        }}
+        {...props}
+      >
+        { children }
+      </div>
     </div>
   );
 }
