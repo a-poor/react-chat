@@ -20,28 +20,21 @@ export default {
 } as ComponentMeta<typeof Message>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Message> = (args) => (
-  <div style={{display: 'flex'}}>
-    <Message {...args} />
-  </div>
-);
+const Template: ComponentStory<typeof Message> = (args) => <Message {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   children: 'Hello, World!',
-  w: 300,
-  h: "fit",
-  bgColor: 'rgb(84, 168, 255)',
-  textColor: 'white',
-  p: "5px 10px",
-  m: "5px",
-  radius: "15px",
-  fromSide: "left",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  children: 'Hello, World!',
+  children: 'Hello, World!\nThis is a second line...',
+  maxw: 200,
+  bgColor: '#efefef',
+  textColor: '#0f0f0f',
+  bottomLeftRadius: 3,
+  bottomRightRadius: 15,
 };
 
